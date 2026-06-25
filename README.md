@@ -5,6 +5,16 @@
 ---
 
 
+### Links úteis
+
+  - [GoLang by Example](https://gobyexample.com/)
+  - [Padrão nos diretórios](https://github.com/golang-standards/project-layout/blob/master/README_ptBR.md)
+  - [Golang Design Patterns](#)
+
+
+---
+
+
 ###  Contexto de Escala
 Este documento foi elaborado para engenheiros seniores e plenos com sólido conhecimento em outras plataformas (como Java/JVM, Python, C# e Node.js) que estão iniciando sua jornada com Go. 
 
@@ -183,7 +193,7 @@ Entender a diferença entre Stack e Heap é o maior divisor de águas entre um d
 * **Stack (Pilha):** Memória extremamente rápida. Cada Goroutine tem sua própria pilha. A alocação e liberação ocorrem em tempo de compilação (LIFO). Não passa pelo Garbage Collector. **Nosso objetivo é manter quase tudo aqui.**
 * **Heap:** Memória compartilhada globalmente. Tudo o que vai para o Heap precisa passar pelo Garbage Collector para ser desalocado. O GC varre o Heap procurando objetos órfãos, consumindo CPU preciosa que deveria estar processando mensagens.
 
-![Stack Memory vs. Heap Memory](./imgs/duv6tvduv6tvduv6.png)
+![Stack Memory vs. Heap Memory](./imgs/uv6tvduv6tvduv6.png)
 
 #### O que é Escape Analysis?
 
