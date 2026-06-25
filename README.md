@@ -126,11 +126,11 @@ func processarMensagem() {
 ---
 
 
-### Derivações do `context.Context` e Gestão de Estado
+### Derivação do `context.Context` e Gestão de Estado
 
 Para desenvolvedores vindos do Java (ThreadLocal) ou do Node.js (AsyncLocalStorage), há uma forte tentação de usar o `context.Context` como um "sacolão" para injetar dependências (clientes de banco de dados, loggers, configurações). **Em Go, isso é um antipadrão severo, especialmente em alta volumetria.**
 
-[Derivações de context e Gestão de Estado](./imgs/seyypxseyypxseyy.png)
+[Derivação de context e Gestão de Estado](./imgs/seyypxseyypxseyy.png)
 
 #### Por que guardar estado/dependências no contexto é ruim?
 
@@ -241,7 +241,7 @@ func CriarFiltroCorreto(id int) Filtro {
 
 Para uma volumetria de 1 bi de mensagens, se cada mensagem instanciar um buffer de processamento ou um JSON de 2KB, teremos **2 Terabytes** de alocações diárias no Heap. O GC passará metade do tempo parando sua aplicação para limpar a memória.
 
-![Reciclagem de Objetos](./imgs/hagjethagjethagj.png)
+![Consumo de memória ECS](./imgs/df326fdf326fdf32.png)
 
 A solução para objetos que obrigatoriamente precisam ir para o Heap (como buffers de bytes temporários para parsing) é a reutilização de memória usando o `sync.Pool`.
 
