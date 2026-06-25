@@ -12,6 +12,7 @@
   - [Concurrency Patterns](./concurrency-patterns.md)
   - [IO Patterns](./io-patterns.md)
   - [Benchmark: Copy VS Pointer](https://medium.com/eureka-engineering/understanding-allocations-in-go-stack-heap-memory-9a2631b5035d)
+  - [Podcast desse README.md](https://drive.google.com/file/d/1TZfxFu2n4RQaebXdWmpNAEmmRyYEdYXW/view?usp=sharing)
 
 
 ---
