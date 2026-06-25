@@ -132,8 +132,6 @@ func processarMensagem() {
 
 Para desenvolvedores vindos do Java (ThreadLocal) ou do Node.js (AsyncLocalStorage), há uma forte tentação de usar o `context.Context` como um "sacolão" para injetar dependências (clientes de banco de dados, loggers, configurações). **Em Go, isso é um antipadrão severo, especialmente em alta volumetria.**
 
-[Derivação de context e Gestão de Estado](./imgs/seyypxseyypxseyy.png)
-
 #### Por que guardar estado/dependências no contexto é ruim?
 
 1. **Perda de Type Safety:** `context.Value` retorna uma interface em branco (`any`). Fazer casting de tipo (`ctx.Value("db").(*Database)`) a cada mensagem adiciona sobrecarga em tempo de execução e risco de pânico (*panic*).
@@ -143,6 +141,8 @@ Para desenvolvedores vindos do Java (ThreadLocal) ou do Node.js (AsyncLocalStora
 #### Ciclo de vida e Contextos Filhos
 
 Contextos formam uma árvore. Se você criar um contexto filho (`context.WithTimeout`) dentro de uma goroutine e esquecer de chamar o `cancel()`, você causará um vazamento de memória (*context leak*), pois o Go manterá o contexto filho vivo na memória até que o pai expire.
+
+![Derivação de context e Gestão de Estado](./imgs/seyypxseyypxseyy.png)
 
 #### Prática Ruim (Abordagem Errada)
 
@@ -195,7 +195,7 @@ Entender a diferença entre Stack e Heap é o maior divisor de águas entre um d
 * **Stack (Pilha):** Memória extremamente rápida. Cada Goroutine tem sua própria pilha. A alocação e liberação ocorrem em tempo de compilação (LIFO). Não passa pelo Garbage Collector. **Nosso objetivo é manter quase tudo aqui.**
 * **Heap:** Memória compartilhada globalmente. Tudo o que vai para o Heap precisa passar pelo Garbage Collector para ser desalocado. O GC varre o Heap procurando objetos órfãos, consumindo CPU preciosa que deveria estar processando mensagens.
 
-![Stack Memory vs. Heap Memory](./imgs/uv6tvduv6tvduv6.png)
+![Stack Memory vs Heap Memory](./imgs/uv6tvduv6tvduv6.png)
 
 #### O que é Escape Analysis?
 
