@@ -11,6 +11,7 @@
   - [Padrão nos diretórios](https://github.com/golang-standards/project-layout/blob/master/README_ptBR.md)
   - [Concurrency Patterns](./concurrency-patterns.md)
   - [IO Patterns](./io-patterns.md)
+  - [Benchmark: Copy VS Pointer](https://medium.com/eureka-engineering/understanding-allocations-in-go-stack-heap-memory-9a2631b5035d)
 
 
 ---
