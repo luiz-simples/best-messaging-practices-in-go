@@ -9,7 +9,8 @@
 
   - [GoLang by Example](https://gobyexample.com/)
   - [Padrão nos diretórios](https://github.com/golang-standards/project-layout/blob/master/README_ptBR.md)
-  - [Golang Design Patterns](#)
+  - [Concurrency Patterns](./concurrency-patterns.md)
+  - [IO Patterns](./io-patterns.md)
 
 
 ---
